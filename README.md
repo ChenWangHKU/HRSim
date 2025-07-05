@@ -1,14 +1,25 @@
-# Ride-sharing-Simulator
-A high-capacity ride-sharing simulator calibrated by real request datasets and road networks
+# HRSim
+A **H**igh-capacity **R**ide-sharing **Sim**ulator calibrated by real request datasets and road networks.
+
+## Platform architecture
+
+The platform mainly consists of six parts, i.e., control centre, environment, RTV system, evaluation system, action system, and post-process system. The **control centre** is designed to integrate all functions, while the **environment** initialises road networks and updates real-time traffic situations. In the **RTV system**, each vehicle is regarded as an agent with its attributes including the current on-vehicle passengers, the planned route, etc. Agents drive to pick up and deliver their scheduled passengers according to the assignment results given by the integer linear programming (ILP) in the **evaluation system**. Subsequently, agents’ movements and speeds, and passengers’ states are updated in the **action system**. Finally, all simulation results are visualised in a **post-process system**.
 
 <div align="center">
     <img src="intro-images/Simulator_Architecture.jpg", width="600" alt><br>
-    Simulator Architecture
+    Architecture of HRSim
+</div>
+
+## Functional modules
+
+<div align="center">
+    <img src="intro-images/Architect.jpg", width="800" alt><br>
+    Functional modules incorporated in HRSim
 </div>
 
 ## Updating
 
-- [x] Implement dispatching and repositioning algorithms of ride-sharing and ride-sourcing
+- [x] Implement dispatching and repositioning algorithms for ride-sharing and ride-sourcing
 - [x] Add traffic flow models to measure traffic congestion, speed, and carbon emissions
 - [x] Implement 2D visualization
 - [ ] Provide implementation for Reinforcement Learning algorithms
@@ -48,20 +59,45 @@ python simulation.py --cfg ./config/test.yaml  --DrawResult True
 ## References
 
 ```
-@article{chen2023quantifying,
+@inproceedings{Chen2025HRSim,
+  title={HRSim: An agent-based simulation platform for high-capacity ride-sharing services},
+  author={Chen, Wang and Shi, Hongzheng and Ke, Jintao},
+  booktitle={2015 IEEE Intelligent Transportation Systems Conference (ITSC)},
+  year={2025},
+  organization={IEEE}
+}
+```
+
+```
+@article{chen2025scaling,
+  title={Scaling laws of dynamic high-capacity ride-sharing},
+  author={Chen, Wang and Yang, Linchuan and Chen, Xiqun and Ke, Jintao},
+  journal={Transportation Research Part C: Emerging Technologies},
+  volume={174},
+  pages={105064},
+  year={2025},
+  publisher={Elsevier}
+}
+```
+
+```
+@article{chen2024quantifying,
   title={Quantifying traffic emission reductions and traffic congestion alleviation from high-capacity ride-sharing},
   author={Chen, Wang and Ke, Jintao and Chen, Xiqun},
-  journal={arXiv preprint arXiv:2308.10512},
-  year={2023}
+  journal={Transportmetrica B: Transport Dynamics},
+  volume={12},
+  number={1},
+  pages={2423235},
+  year={2024},
+  publisher={Taylor \& Francis}
 }
 ```
 
 ```
-@article{chen2023scaling,
-  title={Scaling Laws of Dynamic High-Capacity Ride-Sharing},
-  author={Chen, Wang and Ke, Jintao and Yang, Linchuan},
-  journal={arXiv preprint arXiv:2305.07236},
-  year={2023}
+@article{chen2024development,
+  title={Development dilemma of ride-sharing: Revenue or social welfare?},
+  author={Chen, Wang and Huang, Guan and Ke, Jintao},
+  journal={arXiv preprint arXiv:2412.08801},
+  year={2024}
 }
 ```
-
